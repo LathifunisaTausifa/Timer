@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Countdown Timer</title>
+    <style>
+      .btn {
+        background-color: #ec4899; /* Tailwind's pink-600 */
+      }
+      .btn:hover {
+        transform: scale(1.05);
+      }
+      .btn:disabled {
+        background-color: #e099df; /* Tailwind's gray-400 */
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body class="bg-cover bg-center bg-no-repeat" style="background-image: url('./bg.jpg');">
+    <div
+      class="p-4 flex flex-col items-center bg-[#686D76]/50 backdrop-blur-md h-screen text-white"
+    >
+      <div class="flex justify-start text-left">
+        <h1 class="lg:text-7xl sm:text-3xl p-8 font-extrabold uppercase font-mono text-black">Countdown Timer</h1>
+      </div>
+      <div class="relative bg-slate-400/50 h-[350px] w-[85%] rounded-md">
+        <div class="p-4 rounded-full space-x-5">
+          <div class="flex flex-row items-center justify-center space-x-4 p-4">
+            <label for="target-date" class="text-2xl font-serif font-bold text-pink-600">Select Date :</label>
+            <input
+              type="datetime-local"
+              name="target-date"
+              id="target-date"
+              class="text-gray-400 text-2xl rounded-md p-1 text-center"
+            />
+          </div>
+        </div>
+        <div class="text-center space-x-3 space-y-2">
+          <button id="start-countdown" class="btn bg-pink-600 py-2 px-20 rounded-full hover:scale-105">Start</button>
+          <button id="cancel-countdown" disabled class="btn bg-pink-600 py-2 px-20 gap-6 space-x-4 rounded-full hover:scale-105">Cancel</button>
+          <button id="pause-countdown" disabled class="btn bg-pink-600 py-2 px-20 gap-6 space-x-4 rounded-full hover:scale-105">Pause</button>
+          <button id="resume-countdown" disabled class="btn bg-pink-600 py-2 px-20 gap-6 space-x-4 rounded-full hover:scale-105">Resume</button>
+        </div>
+        <div id="timer-display" class="text-center flex flex-row py-10 space-x-6 justify-center text-3xl">
+          <div class="flex flex-col space-y-2">
+            <span id="days" data-label="Days" class="font-semibold text-6xl">00</span>
+            <span class="font-serif">Days</span>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <span id="hours" data-label="Hours" class="font-semibold text-6xl">00</span>
+            <span class="font-serif">Hours</span>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <span id="minutes" data-label="Minutes" class="font-semibold text-6xl">00</span>
+            <span class="font-serif">Minutes</span>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <span id="seconds" data-label="Seconds" class="font-semibold text-6xl">00</span>
+            <span class="font-serif">Seconds</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 right-0 pb-5 pr-10">
+        <footer class="bg-slate-400/50 px-20 py-2 font-semibold rounded-full text-gray-900">-tausifakhanam212@gmail.com</footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
